@@ -1,0 +1,33 @@
+{
+  "name": "assetmanager",
+  "version": "1.0.0",
+  "description": "Lightwight library for loading and unloading image, video, audio and data assets",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "npm run dev:ts",
+    "dev:ts": "tsc --watch",
+    "build": "npm run build:ts",
+    "build:ts": "tsc",
+    "prepare": "npm run build",
+    "test": "echo 'Coming soon!'"
+  },
+  "author": {
+    "name": "Richard Heuser",
+    "email": "richard.heuser@mediamonks.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
