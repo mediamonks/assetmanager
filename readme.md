@@ -1,4 +1,4 @@
-## Simple Asset Manager (assetManager)
+## AssetManager
 
 - Load and unload image, video, audio and data assets
 - Reduces memory consumption
