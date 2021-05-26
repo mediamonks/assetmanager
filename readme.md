@@ -64,14 +64,14 @@ assetManager.release();
 ```
 
 ### In Vue.js
-```ecmascript 6
+```javascript
 import assetManager from '@mediamonks/assetmanager';
 
 Vue.use(assetManager, { root: 'assets/' });
 ```
 
 #### Loading/using/unloading in a component
-```ecmascript 6
+```javascript
 this.$assets.load(['image.png', 'data.json']);
 
 const { value } = this.$assets.get('data.json');
