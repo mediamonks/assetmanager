@@ -7,7 +7,7 @@
 
 ### Installation
 ```shell
-npm install simple-asset-manager
+npm install @mediamonks/assetmanager
 ```
 
 ### Usage
