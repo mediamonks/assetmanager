@@ -6,7 +6,7 @@ type TOptions = {
 	root?: string;
 };
 
-let _options: TOptions;
+let _options: TOptions = {};
 
 const GLOBAL_NAMESPACE = '__global';
 
