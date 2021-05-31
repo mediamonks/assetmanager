@@ -21,7 +21,7 @@ const getAudioContext = () => _audioContext || (_audioContext = new AudioContext
 
 const EXTENSIONS: { [key: string]: string[] } = {
 	VIDEO: ['mp4', 'mov', 'webm'],
-	IMAGE: ['png', 'jpg', 'jpeg', 'gif'],
+	IMAGE: ['png', 'jpg', 'jpeg', 'gif', 'webp'],
 	AUDIO: ['wav', 'ogg', 'mp3'],
 	DATA: ['json'],
 };
