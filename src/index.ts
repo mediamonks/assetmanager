@@ -34,7 +34,7 @@ const retrieve = (url: string, responseType: XMLHttpRequestResponseType): Promis
 			request.open('GET', url, true);
 			request.responseType = responseType;
 			request.onload = () => {
-				if (request.status !== 200) {
+				if (request.status && request.status !== 200) {
 					return reject(error(url, `Failed to load asset (status ${request.status})`));
 				}
 				
