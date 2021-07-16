@@ -1,13 +1,14 @@
 ## AssetManager
 
-- Load and unload image, video, audio and data assets
+- Loads and unloads image, video, audio and data assets
+- Centralizes asset management
 - Reduces memory consumption
 - Easy to use
 - No dependencies
 
 ### Installation
 ```shell
-npm install @mediamonks/assetmanager
+npm add @mediamonks/assetmanager
 ```
 
 ### Usage
@@ -18,18 +19,18 @@ import assetManager from '@mediamonks/assetmanager';
 assetManager.load('https://catpics.com/cat.png');
 
 // loading multiple files
-assetManager.load(['meow.mp3', 'lol.wav']);
+assetManager.load(['meow.mp3', 'wavs/lol.wav']);
 
 // loading into a namespace
 assetManager.load(['data/data.json', 'videos/video.mp4'], 'main');
 
 // loading with progress callback
-assetManager.load(aLotOfFiles, progress => {
+assetManager.load(allTheFiles, progress => {
     console.log(`${Math.floor(progress * 100)}%`);
 });
 
 // loading into a namespace with progress callback
-assetManager.load(allTheFiles, 'files', progress => {
+assetManager.load(catMediaFiles, 'catMedia', progress => {
     console.log(`${Math.floor(progress * 100)}%`);
 });
 
@@ -63,11 +64,16 @@ assetManager.release('main');
 assetManager.release();
 ```
 
+Note: Keep in mind that garbage collection can't actually free up the memory unless the asset is no longer referenced anywhere, so make sure you also unset any variables, properties and DOM references that point to the asset.
+When using a modern framework, this means that as long as you keep all your references to an asset within a component and properly scope your variables, destroying the component should take care of this.
+
 ### In Vue.js
 ```javascript
 import assetManager from '@mediamonks/assetmanager';
 
-Vue.use(assetManager, { root: 'assets/' });
+Vue.use(assetManager, {
+	root: 'assets/' // optional. specifies a root path to be prefixed to all relative paths
+});
 ```
 
 #### Loading/using/unloading in a component
@@ -81,5 +87,5 @@ this.$assets.release('data.json');
 
 #### Using in a template
 ```vue
-<img :src="$assets.get(...)" />
+<img :src="$assets.get('images/image.png')" />
 ```
