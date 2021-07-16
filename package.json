@@ -1,6 +1,6 @@
 {
   "name": "@mediamonks/assetmanager",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Lightweight library for loading and unloading image, video, audio and data assets",
   "main": "dist/index.js",
   "scripts": {
