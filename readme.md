@@ -2,7 +2,6 @@
 
 - Loads and unloads image, video, audio and data assets
 - Centralizes asset management
-- Reduces memory consumption
 - Easy to use
 - No dependencies
 
@@ -51,6 +50,10 @@ source.start();
 const data = assetManager.get('data/data.json'); // returns Object
 
 
+// loading and using
+const music = await assetManager.load('https://music.com/music.mp3');
+
+
 // unloading a single file
 assetManager.release('meow.mp3');
 
@@ -66,6 +69,7 @@ assetManager.release();
 
 Note: Keep in mind that garbage collection can't actually free up the memory unless the asset is no longer referenced anywhere, so make sure you also unset any variables, properties and DOM references that point to the asset.
 When using a modern framework, this means that as long as you keep all your references to an asset within a component and properly scope your variables, destroying the component should take care of this.
+
 
 ### In Vue.js
 ```javascript
